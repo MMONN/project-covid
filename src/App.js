@@ -3,7 +3,9 @@ import './App.css'
 import logo from './logo.svg';
 import axios from 'axios';
 import TotalCase from './TotalCase';
-import NewCase from './TotalCase';
+import ActiveCase from './ActiveCase';
+import DeathsCase from './DeathsCase';
+import RecoverCase from './RecoverCase';
 
 let contact = 'MMONN'
 class Covid extends React.Component {
@@ -24,7 +26,7 @@ class Covid extends React.Component {
       }
     }
   }
-  componentDidMount() {
+  CovidInformation() {
     const axios = require("axios");
     axios({
       "method": "GET",
@@ -43,17 +45,37 @@ class Covid extends React.Component {
       .catch((error) => {
         console.log(error)
       })
+
+  }
+
+  componentDidMount() {
+    this.CovidInformation();
+    this.interval = setInterval(() => this.CovidInformation(), 1000 * 60 * 60 * 24)
   }
 
   render() {
+
+
     let total = { totalcase: this.state.covid.total_cases, newCase: this.state.covid.new_cases }
+    let active = { activecase: this.state.covid.active_cases }
+    let recover = { recovercase: this.state.covid.total_recovered }
+    let deaths = { totaldeaths: this.state.covid.total_deaths, newdeaths: this.state.covid.new_deaths }
+    let date = Date(Date.now());
+    let newDate = date.toString();
+
     return (
       <div className="container">
         <div className="Head">
           <h1>COVID 2019</h1>
           <p>Statistic Coronavirus around the world</p>
+          <p className="date">The current date is: {newDate} </p>
         </div>
         <TotalCase mes={total} />
+        <div className="infomation">
+          <ActiveCase act={active} />
+          <RecoverCase reco={recover} />
+          <DeathsCase death={deaths} />
+        </div>
       </div>
     )
   }

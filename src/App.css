@@ -1,6 +1,6 @@
 .Head{
   background-color: #212F3C;
-  height: 125px;
+  height: 140px;
   text-align: center;
   line-height: 50px; 
 }
@@ -12,4 +12,15 @@
 .Head p {
   margin: 0;
   color: white;
+}
+.infomation{
+  display: flex;
+  margin: auto;
+}
+p.date{
+  color: #fff;
+  text-align: right;
+  margin: -1% 2%;
+  font-size: 12px;
+  font-family: 'Kanit';
 }

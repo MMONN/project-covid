@@ -1,6 +1,6 @@
 import React from 'react'
 import './Totalcasecss.css'
-import { TeamOutlined,PlusOutlined,GlobalOutlined } from '@ant-design/icons';
+import { TeamOutlined, PlusOutlined, GlobalOutlined } from '@ant-design/icons';
 
 const TotalCase = props => {
       return (
@@ -9,7 +9,9 @@ const TotalCase = props => {
                         <TeamOutlined />
                         <p >TOTAL CASE</p>
                   </div>
-                  <p className="totalcase">{props.mes.totalcase}</p>
+                  <div className="totalcase">
+                        <p>{props.mes.totalcase}</p>
+                  </div>
                   <div className="newcase">
                         <PlusOutlined />
                         <p className="newcase">{props.mes.newCase}</p>
