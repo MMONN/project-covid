@@ -13,10 +13,6 @@
   margin: 0;
   color: white;
 }
-.infomation{
-  display: flex;
-  margin: auto;
-}
 p.date{
   color: #fff;
   text-align: right;
