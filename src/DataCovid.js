@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios';
-import './Totalcasecss.css';
+import './DataCovidcss.css';
 import { TeamOutlined, PlusOutlined, GlobalOutlined, UserAddOutlined, HomeOutlined } from '@ant-design/icons';
-import styled,{ css } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 class DataCovid extends React.Component {
       constructor(props) {
@@ -73,13 +73,13 @@ class DataCovid extends React.Component {
                   text-align: center;
                   font-family: 'Kanit', sans-serif;
 
-                  ${props => props.Active && css `
+                  ${props => props.Active && css`
                   background: #58D68D;
                   `}
-                  ${props => props.Recover && css `
+                  ${props => props.Recover && css`
                   background: #F4D03F;
                   `}
-                  ${props => props.Deaths && css `
+                  ${props => props.Deaths && css`
                   background: #EC7063
                 `}
 `;
@@ -91,6 +91,7 @@ class DataCovid extends React.Component {
                               <div className="box">
                                     <Wrapper>
                                           {/* <TeamOutlined /> */}
+                                          <i class="fas fa-hospital-user"></i>
                                           <Title mes={title.total} />
                                     </Wrapper>
                                     <Result re={total.totalcase} />
@@ -103,7 +104,7 @@ class DataCovid extends React.Component {
                               <div className="box">
                                     <Wrapper Active>
                                           {/* <UserAddOutlined /> */}
-                                          <Title mes={title.active} className="active" />
+                                          <Title mes={title.active} />
                                     </Wrapper>
                                     <Result re={total.activecase} />
                               </div>
