@@ -49,12 +49,12 @@ class DataCovid extends React.Component {
 
       render() {
 
-            let title = { total: 'TOTLE CASE', active: 'ACTIVE CASE', recover: 'TOTLE RECOVER', datehs: 'TOTLE DEATHS' }
-            let total = {
+            const title = { total: 'TOTLE CASE', active: 'ACTIVE CASE', recover: 'TOTLE RECOVER', datehs: 'TOTLE DEATHS' }
+            const total = {
                   totalcase: this.state.covid.total_cases, activecase: this.state.covid.active_cases, recovercase: this.state.covid.total_recovered
                   , totaldeaths: this.state.covid.total_deaths
             }
-            let update = { newCase: this.state.covid.new_cases, newdeaths: this.state.covid.new_deaths }
+            const update = { newCase: this.state.covid.new_cases, newdeaths: this.state.covid.new_deaths }
 
             const Wrapper = styled.div`
                   width: 100%;
@@ -81,8 +81,7 @@ class DataCovid extends React.Component {
                   `}
                   ${props => props.Deaths && css`
                   background: #EC7063
-                `}
-`;
+                `}`;
 
 
             return (
@@ -94,9 +93,9 @@ class DataCovid extends React.Component {
                                           <i class="fas fa-hospital-user"></i>
                                           <Title mes={title.total} />
                                     </Wrapper>
-                                    <Result re={total.totalcase} />
+                                    <Result result={total.totalcase} />
                                     <PlusOutlined />
-                                    <Update up={update.newCase} />
+                                    <Update update={update.newCase} />
                               </div>
                         </div>
 
@@ -106,23 +105,23 @@ class DataCovid extends React.Component {
                                           {/* <UserAddOutlined /> */}
                                           <Title mes={title.active} />
                                     </Wrapper>
-                                    <Result re={total.activecase} />
+                                    <Result result={total.activecase} />
                               </div>
                               <div className="box">
                                     <Wrapper Recover>
                                           {/* <HomeOutlined /> */}
                                           <Title mes={title.recover} />
                                     </Wrapper>
-                                    <Result re={total.recovercase} />
+                                    <Result result={total.recovercase} />
                               </div>
                               <div className="box">
                                     <Wrapper Deaths>
                                           {/* <HomeOutlined /> */}
                                           <Title mes={title.datehs} />
                                     </Wrapper>
-                                    <Result re={total.totaldeaths} />
+                                    <Result result={total.totaldeaths} />
                                     <PlusOutlined />
-                                    <Update up={update.newdeaths} />
+                                    <Update update={update.newdeaths} />
                               </div>
                         </div>
                   </div>
@@ -144,7 +143,7 @@ const Title = (props) => {
 const Result = (props) => {
       return (
             <div className="result">
-                  {props.re}
+                  {props.result}
             </div>
       )
 }
@@ -152,7 +151,7 @@ const Result = (props) => {
 const Update = (props) => {
       return (
             <div className="update">
-                  {props.up}
+                  {props.update}
             </div>
       )
 }
