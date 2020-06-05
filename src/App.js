@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import DataCovid from './DataCovid';
-import ResultByCountry from './ResultByCountry';
+// import ResultByCountry from './ResultByCountry';
 
 class Covid extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class Covid extends React.Component {
           <p className="date">The current date is: {newDate} </p>
         </div>
         <DataCovid />
-        <ResultByCountry/>
+        {/* <ResultByCountry/> */}
       </div>
     )
   }
