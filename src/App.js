@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import DataCovid from './DataCovid';
+import './css/App.css';
+import DataCovid from './component/DataCovid';
 // import ResultByCountry from './ResultByCountry';
 
 class Covid extends React.Component {
