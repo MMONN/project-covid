@@ -38,7 +38,7 @@ function DataCovid(props) {
                   <div className="first-box">
                         <div className="box">
                               <Wrapper>
-                                    <p>TOTOL CASE</p>
+                                    <p>TOTAL CASE</p>
                               </Wrapper>
                               <div className="result">
                                     {props.data.total_cases}
